@@ -1,0 +1,4 @@
+template-file-path: git-sync-sample-template.yml
+parameters:
+  LambdafunctionName: myfumctiontt
+tags: {}
