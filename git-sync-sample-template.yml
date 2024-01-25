@@ -1,5 +1,10 @@
 AWSTemplateFormatVersion: "2010-09-09"
 #This is just a template.
+Parameters:
+  LambdafunctionName:
+    Type: String
+    Description: Name of the lambda function to be used
+
 Resources:
 
   HelloLambdaRole:
@@ -17,7 +22,7 @@ Resources:
   HelloLambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
-      FunctionName: HelloLambdaFunction
+      FunctionName: !Ref LambdafunctionName
       Role: !GetAtt HelloLambdaRole.Arn
       Runtime: python3.7
       Handler: index.my_handler
