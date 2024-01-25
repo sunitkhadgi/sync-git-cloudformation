@@ -1,33 +1,4 @@
-AWSTemplateFormatVersion: "2010-09-09"
-#This is just a template.
-Parameters:
-  LambdafunctionName:
-    Type: String
-    Description: Name of the lambda function to be used
-
-Resources:
-
-  HelloLambdaRole:
-    Type: AWS::IAM::Role
-    Properties:
-      RoleName: HelloLambdaRole
-      AssumeRolePolicyDocument:
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-            Action: sts:AssumeRole
-                
-
-  HelloLambdaFunction:
-    Type: AWS::Lambda::Function
-    Properties:
-      FunctionName: !Ref LambdafunctionName
-      Role: !GetAtt HelloLambdaRole.Arn
-      Runtime: python3.7
-      Handler: index.my_handler
-      Code:
-        ZipFile: |
-          def my_handler(event, context):
-            message = 'Hello Lambda World!'
-            return message
+template-file-path: template.yaml
+parameters:
+  LambdafunctionName: itsmylambdarole
+tags: {}
