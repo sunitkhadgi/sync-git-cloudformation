@@ -1,0 +1,4 @@
+template-file-path: git-sync-sample-template.yaml
+parameters:
+  LambdafunctionName: myfunction
+tags: {}
